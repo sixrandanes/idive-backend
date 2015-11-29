@@ -1,3 +1,8 @@
-/build/
-/bin/
-/.apt_generated/
+build/
+bin/
+.apt_generated/
+.factorypath
+.classpath
+.settings
+.gradle
+
