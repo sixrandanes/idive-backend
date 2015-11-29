@@ -3,6 +3,6 @@ bin/
 .apt_generated/
 .factorypath
 .classpath
-.settings
+.settings/
 .gradle
 
