@@ -1,0 +1,127 @@
+spring:
+ profiles:
+  active: local
+  hibernate:
+   ddl: auto  
+ application:
+  name: Ocean
+ output:
+  ansi:
+   enabled: always   
+management:
+ port: 8084
+ address: 127.0.0.1
+ context-path: /test
+ 
+multipart:
+  max-file-size: 10Mb
+  max-request-size: 10Mb
+
+#SERVER
+server:
+ port: 8083
+ session-timeout: 300
+ tomcat.uri-encoding: UTF-8
+ compression:
+  enabled: true
+---
+#PROFILE LOCAL
+spring:
+ profiles: local
+ datasource:
+  initialize: false
+datasource:
+ ocean:
+  #driverClassName: org.postgresql.Driver
+  driverClassName: ch.sla.jdbcperflogger.driver.WrappingDriver
+  url: "jdbcperflogger:jdbc:postgresql://localhost:5433/sefora?currentSchema=ocean"
+  username: postgres
+  password: Hendaye64!
+ ref:
+  url: "jdbcperflogger:jdbc:postgresql://localhost:5433/sefora?currentSchema=sefora_ref"
+  username: postgres
+  password: Hendaye64!
+  driverClassName: ch.sla.jdbcperflogger.driver.WrappingDriver
+ fpc:
+  url: "jdbcperflogger:jdbc:postgresql://localhost:5433/sefora?currentSchema=sefora_fpc"
+  username: postgres
+  password: Hendaye64!
+  driverClassName: ch.sla.jdbcperflogger.driver.WrappingDriver
+ ind:
+  url: "jdbcperflogger:jdbc:postgresql://localhost:5433/sefora?currentSchema=sefora_ind"
+  username: postgres
+  password: Hendaye64!
+  driverClassName: ch.sla.jdbcperflogger.driver.WrappingDriver
+ sec:
+  url: "jdbcperflogger:jdbc:postgresql://localhost:5433/sefora?currentSchema=sefora_sec"
+  username: postgres
+  password: Hendaye64!
+  driverClassName: ch.sla.jdbcperflogger.driver.WrappingDriver
+--- 
+#PROFILE DEV
+# Pour enregistrer l'application pour sefora-admin-boot il suffit d'ajouter l'URL du server
+#autoriser dans les connexions de spring security api/applications
+# ajouter la dépendance dans gradle 		compile("de.codecentric:spring-boot-admin-starter-client:1.2.3")
+spring:
+ profiles: dev
+ datasource:
+  initialize: false
+datasource:
+ ocean:
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  url: "jdbc:oracle:thin:@srv-db-sefora.dev.appli-gestion.nc:42100:SEFDEV"
+  username: ocean
+  password: kUrk34Pu9
+ ref:
+  url: "jdbc:oracle:thin:@srv-db-sefora.dev.appli-gestion.nc:42100:SEFDEV"
+  username: sefora_ref
+  password: DSE11
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ fpc:
+  url: "jdbc:oracle:thin:@srv-db-sefora.dev.appli-gestion.nc:42100:SEFDEV"
+  username: sefora_fpc
+  password: DSE19
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ ind:
+  url: "jdbc:oracle:thin:@srv-db-sefora.dev.appli-gestion.nc:42100:SEFDEV"
+  username: sefora_ind
+  password: DSE18
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ sec:
+  url: "jdbc:oracle:thin:@srv-db-sefora.dev.appli-gestion.nc:42100:SEFDEV"
+  username: sefora_sec
+  password: DSE8
+  driverClassName: oracle.jdbc.driver.OracleDriver
+--- 
+#PROFILE TEST
+# Pour execution des tests integration
+spring:
+ profiles: test
+ datasource:
+  initialize: false
+datasource:
+ ocean:
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  url: "jdbc:oracle:thin:@192.168.104.126:42100:SEFFOR"
+  username: ocean
+  password: e585e9884
+ ref:
+  url: "jdbc:oracle:thin:@192.168.104.126:42100:SEFFOR"
+  username: sefora_ref
+  password: SEFORA_REF
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ fpc:
+  url: "jdbc:oracle:thin:@192.168.104.126:42100:SEFFOR"
+  username: sefora_fpc
+  password: SEFORA_FPC
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ ind:
+  url: "jdbc:oracle:thin:@192.168.104.126:42100:SEFFOR"
+  username: sefora_ind
+  password: SEFORA_IND
+  driverClassName: oracle.jdbc.driver.OracleDriver
+ sec:
+  url: "jdbc:oracle:thin:@192.168.104.126:42100:SEFFOR"
+  username: sefora_sec
+  password: SEFORA_SEC
+  driverClassName: oracle.jdbc.driver.OracleDriver

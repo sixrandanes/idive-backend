@@ -17,6 +17,8 @@ I::::::::ID:::::::::::::::DD I::::::::I          V:::::V          E:::::::::::::
 I::::::::ID::::::::::::DDD   I::::::::I           V:::V           E::::::::::::::::::::E
 IIIIIIIIIIDDDDDDDDDDDDD      IIIIIIIIII            VVV            EEEEEEEEEEEEEEEEEEEEEE
                                                                                         
+version :: ${application.version}
+spring-boot-version :: ${spring-boot.version}
                                                                                         
                                                                                         
                                                                                         
