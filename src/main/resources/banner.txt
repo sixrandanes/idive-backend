@@ -19,9 +19,5 @@ IIIIIIIIIIDDDDDDDDDDDDD      IIIIIIIIII            VVV            EEEEEEEEEEEEEE
                                                                                         
 version :: ${application.version}
 spring-boot-version :: ${spring-boot.version}
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                                        
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
