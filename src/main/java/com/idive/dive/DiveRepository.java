@@ -1,7 +1,9 @@
 package com.idive.dive;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-public interface DiveRepository extends CrudRepository<Dive, Long> {
+@RepositoryRestResource(collectionResourceRel = "dives", path = "dives")
+public interface DiveRepository extends PagingAndSortingRepository<Dive, Long> {
 
 }

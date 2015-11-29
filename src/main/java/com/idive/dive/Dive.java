@@ -3,11 +3,15 @@ package com.idive.dive;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.NodeEntity;
+
 import com.idive.location.Location;
 
 /**
  * Created by Sylvain on 17/04/2015.
  */
+@NodeEntity
 public class Dive implements Serializable {
 
 	/**
@@ -15,6 +19,7 @@ public class Dive implements Serializable {
 	 */
 	private static final long serialVersionUID = -7743979365714676329L;
 
+	@GraphId
 	private long id;
 	private int maxDepth;
 	private int averageDepth;
