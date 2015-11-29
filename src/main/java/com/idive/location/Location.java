@@ -3,13 +3,9 @@ package com.idive.location;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
  * Created by Sylvain on 18/04/2015.
  */
-@Entity
 public class Location implements Serializable {
 
 	/**
@@ -19,7 +15,6 @@ public class Location implements Serializable {
 
 	private long id;
 
-	@Id
 	public long getId() {
 		return id;
 	}

@@ -3,15 +3,11 @@ package com.idive.dive;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import com.idive.location.Location;
 
 /**
  * Created by Sylvain on 17/04/2015.
  */
-@Entity
 public class Dive implements Serializable {
 
 	/**
@@ -25,7 +21,6 @@ public class Dive implements Serializable {
 	private int time;
 	private Location location;
 
-	@Id
 	public long getId() {
 		return id;
 	}
