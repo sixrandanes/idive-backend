@@ -1,4 +1,4 @@
-https://travis-ci.org/sixrandanes/idive-backend.svg?branch=develop
+[![Build Status](https://travis-ci.org/sixrandanes/idive-backend.svg?branch=develop)](https://travis-ci.org/sixrandanes/idive-backend)
 
 # idive-backend
 
