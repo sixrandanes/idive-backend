@@ -81,5 +81,5 @@ integrationTest {
 }
 
 task stage {
-  dependsOn installDist
+  dependsOn build
 }
