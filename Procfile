@@ -1,1 +1,2 @@
-web: build/install/gradle-getting-started/bin/gradle-getting-started
+web: java -Dserver.port=$PORT -jar target/idive-backend-1.0.jar
+
