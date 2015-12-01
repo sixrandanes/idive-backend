@@ -20,17 +20,17 @@ public class Dive implements Serializable {
 	private static final long serialVersionUID = -7743979365714676329L;
 
 	@GraphId
-	private long id;
+	private Long id;
 	private int maxDepth;
 	private int averageDepth;
 	private int time;
 	private Location location;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

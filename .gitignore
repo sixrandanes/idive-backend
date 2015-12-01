@@ -7,3 +7,4 @@ bin/
 .gradle
 .project
 .springBeans
+default.graphdb/
