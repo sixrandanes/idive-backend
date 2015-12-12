@@ -1,2 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/idive-backend-1.0.jar
-
+web: java -Dserver.port=$PORT -jar build/libs/idive-backend-1.0.jar

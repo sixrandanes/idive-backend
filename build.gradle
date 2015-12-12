@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-apply plugin: "io.ratpack.ratpack-groovy"
 
 group = 'com.idive'
 version = '1.0'
@@ -10,7 +9,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 jar {
-    baseName = 'ocean-core'
+    baseName = 'idive-backend'
     manifest {
         attributes("Implementation-Title": "idive",
                 "Implementation-Version": version)
