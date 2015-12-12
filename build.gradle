@@ -79,6 +79,4 @@ integrationTest {
     systemProperty "user.timezone", "GMT+9"
 }
 
-task stage {
-    dependsOn build
-}
+task stage(dependsOn: ['build'])
