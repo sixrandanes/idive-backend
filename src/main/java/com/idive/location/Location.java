@@ -3,13 +3,13 @@ package com.idive.location;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.NodeEntity;
 
 /**
  * Created by Sylvain on 18/04/2015.
  */
-@Entity
+@NodeEntity
 public class Location implements Serializable {
 
 	/**
@@ -17,14 +17,14 @@ public class Location implements Serializable {
 	 */
 	private static final long serialVersionUID = -3794446039190603075L;
 
-	private long id;
+	@GraphId
+	private Long id;
 
-	@Id
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

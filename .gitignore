@@ -7,3 +7,6 @@ bin/
 .gradle
 .project
 .springBeans
+default.graphdb/
+.idea
+idive-backend.iml

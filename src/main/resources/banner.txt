@@ -1,22 +1,12 @@
-                                                                                        
-                                                                                        
-IIIIIIIIIIDDDDDDDDDDDDD      IIIIIIIIIIVVVVVVVV           VVVVVVVVEEEEEEEEEEEEEEEEEEEEEE
-I::::::::ID::::::::::::DDD   I::::::::IV::::::V           V::::::VE::::::::::::::::::::E
-I::::::::ID:::::::::::::::DD I::::::::IV::::::V           V::::::VE::::::::::::::::::::E
-II::::::IIDDD:::::DDDDD:::::DII::::::IIV::::::V           V::::::VEE::::::EEEEEEEEE::::E
-  I::::I    D:::::D    D:::::D I::::I   V:::::V           V:::::V   E:::::E       EEEEEE
-  I::::I    D:::::D     D:::::DI::::I    V:::::V         V:::::V    E:::::E             
-  I::::I    D:::::D     D:::::DI::::I     V:::::V       V:::::V     E::::::EEEEEEEEEE   
-  I::::I    D:::::D     D:::::DI::::I      V:::::V     V:::::V      E:::::::::::::::E   
-  I::::I    D:::::D     D:::::DI::::I       V:::::V   V:::::V       E:::::::::::::::E   
-  I::::I    D:::::D     D:::::DI::::I        V:::::V V:::::V        E::::::EEEEEEEEEE   
-  I::::I    D:::::D     D:::::DI::::I         V:::::V:::::V         E:::::E             
-  I::::I    D:::::D    D:::::D I::::I          V:::::::::V          E:::::E       EEEEEE
-II::::::IIDDD:::::DDDDD:::::DII::::::II         V:::::::V         EE::::::EEEEEEEE:::::E
-I::::::::ID:::::::::::::::DD I::::::::I          V:::::V          E::::::::::::::::::::E
-I::::::::ID::::::::::::DDD   I::::::::I           V:::V           E::::::::::::::::::::E
-IIIIIIIIIIDDDDDDDDDDDDD      IIIIIIIIII            VVV            EEEEEEEEEEEEEEEEEEEEEE
-                                                                                        
+_________ ______  _________          _______ 
+\__   __/(  __  \ \__   __/|\     /|(  ____ \
+   ) (   | (  \  )   ) (   | )   ( || (    \/
+   | |   | |   ) |   | |   | |   | || (__    
+   | |   | |   | |   | |   ( (   ) )|  __)   
+   | |   | |   ) |   | |    \ \_/ / | (      
+___) (___| (__/  )___) (___  \   /  | (____/\
+\_______/(______/ \_______/   \_/   (_______/
+                                              
 version :: ${application.version}
 spring-boot-version :: ${spring-boot.version}
 
