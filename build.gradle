@@ -4,7 +4,7 @@ apply plugin: "io.ratpack.ratpack-groovy"
 
 group = 'com.idive'
 version = '1.0'
-	
+
 compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -13,32 +13,32 @@ jar {
     baseName = 'ocean-core'
     manifest {
         attributes("Implementation-Title": "idive",
-                   "Implementation-Version": version)
+                "Implementation-Version": version)
     }
 }
 
 repositories {
-	jcenter()
-				maven {
-			url "http://m2.neo4j.org/content/repositories/releases/"
-			}
-	mavenCentral()
+    jcenter()
+    maven {
+        url "http://m2.neo4j.org/content/repositories/releases/"
+    }
+    mavenCentral()
 }
 
 buildscript {
-	repositories {
-			maven {
-			url "http://m2.neo4j.org/content/repositories/releases/"
-			}
-			jcenter()
-			mavenCentral()
-	}
+    repositories {
+        maven {
+            url "http://m2.neo4j.org/content/repositories/releases/"
+        }
+        jcenter()
+        mavenCentral()
+    }
 
-	dependencies {
-	 classpath "io.ratpack:ratpack-gradle:1.0.0"
-		classpath(group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.3.0.RELEASE')
-		classpath(group: 'org.springframework', name: 'springloaded', version: '1.2.4.RELEASE')
-	}
+    dependencies {
+        classpath "io.ratpack:ratpack-gradle:1.0.0"
+        classpath(group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.3.0.RELEASE')
+        classpath(group: 'org.springframework', name: 'springloaded', version: '1.2.4.RELEASE')
+    }
 }
 
 sourceSets {
@@ -48,26 +48,26 @@ sourceSets {
 }
 
 dependencies {
-	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.3")
-	compile("org.springframework.boot:spring-boot-starter-data-rest")
-	compile 'org.springframework.data:spring-data-rest-hal-browser'
-	compile("org.springframework.boot:spring-boot-starter-tomcat")
-	compile 'org.springframework.data:spring-data-neo4j'
-	compile("org.springframework.boot:spring-boot-starter-test")
-	compile('org.springframework.boot:spring-boot-configuration-processor')
-	compile("com.h2database:h2")
-	compile 'com.github.sylvainlaurent.jdbcperflogger:jdbc-perf-logger-driver:0.7.3'
-	runtime "org.slf4j:slf4j-simple:1.7.12"
-  	compile "com.heroku.sdk:heroku-jdbc:0.1.1"
-  	compile "org.postgresql:postgresql:9.4-1201-jdbc4"
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.3"
+    compile "org.springframework.boot:spring-boot-starter-data-rest"
+    compile 'org.springframework.data:spring-data-rest-hal-browser'
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile 'org.springframework.data:spring-data-neo4j'
+    compile "org.springframework.boot:spring-boot-starter-test"
+    compile 'org.springframework.boot:spring-boot-configuration-processor'
+    compile "com.h2database:h2"
+    compile 'com.github.sylvainlaurent.jdbcperflogger:jdbc-perf-logger-driver:0.7.3'
+    runtime "org.slf4j:slf4j-simple:1.7.12"
+    compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+    compile "org.postgresql:postgresql:9.4-1201-jdbc4"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
     integrationTestCompile sourceSets.main.output
     integrationTestCompile configurations.testCompile
     integrationTestCompile sourceSets.test.output
     integrationTestRuntime configurations.testRuntime
 }
 
-task integrationTest(type: Test, dependsOn: [build,jar]) {
+task integrationTest(type: Test, dependsOn: [build, jar]) {
     group 'Verification'
     description 'Runs the integration tests.'
     testClassesDir = sourceSets.integrationTest.output.classesDir
@@ -76,10 +76,10 @@ task integrationTest(type: Test, dependsOn: [build,jar]) {
     include '**/*TestIT.*'
 }
 
-integrationTest { 
-     systemProperty "user.timezone", "GMT+9"
+integrationTest {
+    systemProperty "user.timezone", "GMT+9"
 }
 
 task stage {
-  dependsOn build
+    dependsOn build
 }
