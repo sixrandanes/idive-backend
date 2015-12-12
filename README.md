@@ -6,3 +6,4 @@ This backend provides services about diving. It will make possible to log dives,
 
 This backend uses spring-boot, spring-data-rest and a neo4j database.
 ...
+
