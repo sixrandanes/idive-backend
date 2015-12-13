@@ -3,6 +3,7 @@ package com.idive.dive;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.idive.divelog.DiveLog;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
 
@@ -23,9 +24,9 @@ public class Dive implements Serializable {
 	private Long id;
 	private int maxDepth;
 	private int averageDepth;
-	private int time;
+	private int duration;
 	private Location location;
-
+	private DiveLog diveLog;
 	public Long getId() {
 		return id;
 	}
@@ -50,12 +51,12 @@ public class Dive implements Serializable {
 		this.averageDepth = averageDepth;
 	}
 
-	public int getTime() {
-		return time;
+	public int getDuration() {
+		return duration;
 	}
 
-	public void setTime(int time) {
-		this.time = time;
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 
 	public Location getLocation() {
@@ -66,7 +67,15 @@ public class Dive implements Serializable {
 		this.location = location;
 	}
 
-	/**
+	public DiveLog getDiveLog() {
+		return diveLog;
+	}
+
+    public void setDiveLog(DiveLog diveLog) {
+        this.diveLog = diveLog;
+    }
+
+    /**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -79,7 +88,7 @@ public class Dive implements Serializable {
 		}
 		Dive castOther = Dive.class.cast(other);
 		return Objects.equals(id, castOther.id) && Objects.equals(maxDepth, castOther.maxDepth)
-				&& Objects.equals(averageDepth, castOther.averageDepth) && Objects.equals(time, castOther.time)
+				&& Objects.equals(averageDepth, castOther.averageDepth) && Objects.equals(duration, castOther.duration)
 				&& Objects.equals(location, castOther.location);
 	}
 
@@ -88,12 +97,12 @@ public class Dive implements Serializable {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, maxDepth, averageDepth, time, location);
+		return Objects.hash(id, maxDepth, averageDepth, duration, location);
 	}
 
 	@Override
 	public String toString() {
-		return "Dive [id=" + id + ", maxDepth=" + maxDepth + ", averageDepth=" + averageDepth + ", time=" + time
+		return "Dive [id=" + id + ", maxDepth=" + maxDepth + ", averageDepth=" + averageDepth + ", duration=" + duration
 				+ ", location=" + location + "]";
 	}
 }
