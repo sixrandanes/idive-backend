@@ -1,13 +1,16 @@
 package com.idive.dive;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 import com.idive.divelog.DiveLog;
+import com.idive.location.Location;
+import org.neo4j.graphdb.Direction;
+import org.neo4j.graphdb.Relationship;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
+import org.springframework.data.neo4j.annotation.RelatedTo;
+import org.springframework.data.neo4j.annotation.RelationshipEntity;
 
-import com.idive.location.Location;
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Created by Sylvain on 17/04/2015.
@@ -25,8 +28,13 @@ public class Dive implements Serializable {
 	private int maxDepth;
 	private int averageDepth;
 	private int duration;
+
+    @RelatedTo(type="LOCATES", direction = Direction.INCOMING)
 	private Location location;
+
+
 	private DiveLog diveLog;
+
 	public Long getId() {
 		return id;
 	}
@@ -34,6 +42,7 @@ public class Dive implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	public int getMaxDepth() {
 		return maxDepth;
